@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice5</title>
+    <style>
+        :root {
+            --primary-color: rgb(4, 7, 172);
+            --text-color: rgb(13, 9, 63);
+        }
+
+        .container {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            display: flex;
+            width: 100vw;
+            height: 90vh;
+            border: 2px solid rgb(0, 6, 29);
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .box {
+            background-color: aliceblue;
+            color: var(--text-color, rgb(136, 94, 216));
+            display: flex;
+            width: 125px;
+            height: 90px;
+            border: 2px solid black;
+            margin: 50px;
+            border-radius: 15px;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .foot {
+            border: 2px solid var(--text-color);
+            margin: 20px;
+            text-align: center;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+    </div>
+    <footer class="foot">
+        <b>COPYRIGHT | ALL RIGHTS RESERVED | CALCXX</b>
+    </footer>
+</body>
+
+</html>

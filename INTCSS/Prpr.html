@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan photography</title>
+    <style>
+        :root {
+            --text-color: #0e0d0d;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #0e0d0d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-links li:hover {
+            color: #ee8104;
+        }
+
+        .main {
+            height: 89vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #0f0d0d;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.3)),
+                url(ChatGPT\ Image\ May\ 24\,\ 2026\,\ 10_34_23\ PM.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main h1 {
+            font-size: 60px;
+            color: #2b3136;
+            margin-bottom: 20px;
+        }
+
+        .main p {
+            font-size: 20px;
+            color: #0a0303;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .main button {
+            margin: 25px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(173, 247, 3, 0.562);
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .main button:hover {
+            background-color: #8da1ace8;
+        }
+
+        .services {
+            padding: 60px 80px;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #0a0303;
+        }
+
+        .services h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: rgba(145, 231, 202, 0.671);
+            width: 250px;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .booking{
+            padding: 70px 20px;
+            text-align: center;
+            background-color: white;
+        }
+        .booking h2{
+            font-size: 42px;
+            margin-bottom: 20px;
+                    }
+                    .booking p{
+                        font-size: 18px;
+                        margin-bottom: 25px;
+                    }
+                    .booking button{
+                        padding: 14px 28px;
+                        border: none;
+                        border-radius: 18px;
+                        font-size: 18px;
+                        font-weight: bold;
+                        background-color: rgba(173, 247, 3, 0.562);
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+                    .booking button:hover{
+                        background-color: #8da1ace8;
+                    }
+                    .socials{
+    padding: 70px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: black;
+}
+.social-links{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.social-links a{
+    text-decoration: none;
+    background-color: #222;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.social-links a:hover{
+    color: #f08e67;
+}
+footer{
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 26px;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            MUSKAN PHOTOGRAPHY</div>
+
+        <ul class="nav-links">
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>FEEDBACK</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+    <section class="main">
+        <h1>CAPTURE THE BEAUTIFUL </h1>
+        <p>PROFESSIONAL PHOTOGRAPHY FOR WEDDING ,
+            PREWEDDING SHOOT, BIRTHDAYS , RING CEREMONY</p>
+        <button>
+            EXPLORE GALLERY
+        </button>
+    </section>
+    <section class="services">
+        <div class="service-card">
+            <h2>SERVICES AVAILABLE</h2>
+            <div class="card">
+                <h3>WEDDING SHOOT</h3>
+                <p>Beautiful cinematic wedding photography.</p>
+            </div>
+            <div class="card">
+                <h3>PREWEDDING SHOOT</h4>
+                    <p> Creative outdoor and couple shoots.</p>
+            </div>
+            <div class="card">
+                <h3>BIRTHDAY SHOOT</h5>
+                    <p>Capture memorable birthday moments.</p>
+            </div>
+            <div class="card">
+                <h3>RING CEREMONY</h6>
+                    <p> Elegant engagement photography sessions.</p>
+            </div>
+        </div>
+    </section>
+    <section class="booking">
+        <h2>BOOK YOUR SHOOT NOW</h2>
+        <p> Contact us for weddings, birthdays,
+            pre wedding and special events.</p>
+        <button>
+            BOOK NOW
+        </button>
+    </section>
+    <section class="socials">
+    <h2>
+        Connect With Us
+    </h2>
+    <div class="social-links">
+        <a href="#">
+            Instagram
+        </a>
+        <a href="#">
+            WhatsApp
+        </a>
+        <a href="#">
+            Facebook
+        </a>
+    </div>
+</section>
+<footer>
+    © 2026 Muskan Photography | All Rights Reserved
+</footer>
+</body>
+
+</html>
