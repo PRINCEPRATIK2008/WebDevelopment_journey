@@ -1,0 +1,26 @@
+.header {
+    border: 2px solid black;
+    padding: 15px;
+    margin: 10px;
+}
+
+
+.main {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.post {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.footer {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    font-style: italic;
+}
