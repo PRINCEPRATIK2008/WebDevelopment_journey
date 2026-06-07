@@ -1,0 +1,14 @@
+console.log("Hey this all about variables in Js")
+let a = 5;
+let b = 4;
+let c = "Prince"
+console.log(a + b)
+
+// var ---- global scoped , let ---- block scoped----Remember
+console.log(typeof a, typeof b, typeof c)
+// exempliefy;
+{
+    let a = 6;
+    console.log(a)
+}
+// above function will give output of 6 if, let is replaced by var then the value of a i.e, 5 will be shown everywhere as var is global scoped
