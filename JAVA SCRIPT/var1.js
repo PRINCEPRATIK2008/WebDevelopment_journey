@@ -12,3 +12,13 @@ console.log(typeof a, typeof b, typeof c)
     console.log(a)
 }
 // above function will give output of 6 if, let is replaced by var then the value of a i.e, 5 will be shown everywhere as var is global scoped
+
+let p = "Prince";
+let q = 18;
+let r = 4.55;
+let x = true;
+let y = undefined;
+let z = null;
+
+console.log(p, q, r, x, y, z)
+console.log(typeof p, typeof q, typeof r, typeof x, typeof y, typeof z)
