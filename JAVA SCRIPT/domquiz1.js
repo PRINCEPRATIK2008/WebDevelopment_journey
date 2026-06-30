@@ -16,7 +16,7 @@
 // or 
 console.log("script is initializing...");
 
-let boxes = document.querySelector(".container").children;
+let boxes = document.querySelector(".container").children
 
 function getRandomcolor() {
     let val1 = Math.ceil(Math.random() * 255);
