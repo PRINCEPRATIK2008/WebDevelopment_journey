@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Video Row Template</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f5f5f5;
+      background: #111;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    main {
+      width: min(980px, 100%);
+      display: grid;
+      gap: 22px;
+    }
+
+    .editor {
+      background: #1b1b1b;
+      border: 1px solid #303030;
+      border-radius: 8px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: #d7d7d7;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    input {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid #4b4b4b;
+      border-radius: 6px;
+      background: #0f0f0f;
+      color: #fff;
+      padding: 10px 12px;
+      font: inherit;
+    }
+
+    input[type="file"] {
+      padding: 8px;
+    }
+
+    .preview-wrap {
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #222;
+    }
+
+    .video-row {
+      width: 100%;
+      min-height: 136px;
+      background: #000;
+      display: grid;
+      grid-template-columns: 218px minmax(0, 1fr);
+      align-items: start;
+      gap: 8px;
+    }
+
+    .thumb {
+      position: relative;
+      width: 218px;
+      height: 132px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #09c4d3, #071623 58%, #f7c345);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumb-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+      text-shadow: 0 2px 8px #000;
+      background:
+        radial-gradient(circle at 76% 22%, rgba(255, 205, 48, .85), transparent 20%),
+        linear-gradient(135deg, #08c8dc 0%, #12213a 52%, #050505 100%);
+    }
+
+    .badge {
+      position: absolute;
+      left: 7px;
+      bottom: 23px;
+      background: rgba(0, 0, 0, .72);
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 2px;
+      font-size: 14px;
+      line-height: 1.1;
+      font-weight: 800;
+      text-shadow: 0 1px 3px #000;
+    }
+
+    .duration {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      background: rgba(0, 0, 0, .76);
+      color: #eee;
+      padding: 4px 6px;
+      border-radius: 3px;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 4px 8px 0 0;
+      min-width: 0;
+    }
+
+    .title {
+      margin: 0;
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(24px, 4vw, 32px);
+      line-height: 1.14;
+      font-weight: 800;
+      text-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+      overflow-wrap: anywhere;
+    }
+
+    .meta {
+      margin-top: 14px;
+      color: #aaa;
+      font-size: clamp(16px, 2.4vw, 20px);
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 12px;
+      }
+
+      .editor {
+        grid-template-columns: 1fr;
+      }
+
+      .video-row {
+        grid-template-columns: 150px minmax(0, 1fr);
+        min-height: 92px;
+      }
+
+      .thumb {
+        width: 150px;
+        height: 92px;
+      }
+
+      .badge {
+        font-size: 11px;
+        bottom: 17px;
+      }
+
+      .duration {
+        font-size: 12px;
+      }
+
+      .content {
+        padding-top: 2px;
+      }
+
+      .title {
+        font-size: 17px;
+      }
+
+      .meta {
+        margin-top: 7px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <form class="editor" id="editor">
+      <label class="wide">
+        Video title
+        <input id="titleInput" type="text" value="" />
+      </label>
+
+      <label>
+        Channel name
+        <input id="channelInput" type="text" value="" />
+      </label>
+
+      <label>
+        Views
+        <input id="viewsInput" type="text" value="" />
+      </label>
+
+      <label>
+        Upload time
+        <input id="ageInput" type="text" value="" />
+      </label>
+
+      <label>
+        Duration
+        <input id="durationInput" type="text" value="" />
+      </label>
+
+      <label>
+        Thumbnail label
+        <input id="badgeInput" type="text" value="" />
+      </label>
+
+      <label>
+        Thumbnail upload
+        <input id="thumbnailFileInput" type="file" accept="image/*" />
+      </label>
+
+      <label>
+        Thumbnail URL
+        <input id="thumbnailUrlInput" type="url" placeholder="https://example.com/thumbnail.jpg" />
+      </label>
+    </form>
+
+    <section class="preview-wrap" aria-label="Video row preview">
+      <article class="video-row">
+        <div class="thumb">
+          <div class="thumb-placeholder" id="thumbPlaceholder"></div>
+          <img id="thumbnailPreview" alt="Thumbnail preview" hidden />
+          <span class="badge" id="badgePreview"></span>
+          <span class="duration" id="durationPreview"></span>
+        </div>
+
+        <div class="content">
+          <h1 class="title" id="titlePreview"></h1>
+          <div class="meta" id="metaPreview"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const titleInput = document.querySelector("#titleInput");
+    const channelInput = document.querySelector("#channelInput");
+    const viewsInput = document.querySelector("#viewsInput");
+    const ageInput = document.querySelector("#ageInput");
+    const durationInput = document.querySelector("#durationInput");
+    const badgeInput = document.querySelector("#badgeInput");
+    const thumbnailFileInput = document.querySelector("#thumbnailFileInput");
+    const thumbnailUrlInput = document.querySelector("#thumbnailUrlInput");
+
+    const titlePreview = document.querySelector("#titlePreview");
+    const metaPreview = document.querySelector("#metaPreview");
+    const durationPreview = document.querySelector("#durationPreview");
+    const badgePreview = document.querySelector("#badgePreview");
+    const thumbnailPreview = document.querySelector("#thumbnailPreview");
+    const thumbPlaceholder = document.querySelector("#thumbPlaceholder");
+
+    function updateText() {
+      titlePreview.textContent = titleInput.value || "Video title";
+      durationPreview.textContent = durationInput.value || "0:00";
+      badgePreview.textContent = badgeInput.value || "Tutorial";
+
+      const channel = channelInput.value || "Channel";
+      const views = viewsInput.value || "0 views";
+      const age = ageInput.value || "just now";
+      metaPreview.textContent = `${channel} . ${views} . ${age} .`;
+    }
+
+    function showThumbnail(src) {
+      if (!src) {
+        thumbnailPreview.hidden = true;
+        thumbnailPreview.removeAttribute("src");
+        thumbPlaceholder.hidden = false;
+        return;
+      }
+
+      thumbnailPreview.src = src;
+      thumbnailPreview.hidden = false;
+      thumbPlaceholder.hidden = true;
+    }
+
+    document.querySelectorAll("input[type='text'], input[type='url']").forEach((input) => {
+      input.addEventListener("input", updateText);
+    });
+
+    thumbnailUrlInput.addEventListener("input", () => {
+      showThumbnail(thumbnailUrlInput.value.trim());
+    });
+
+    thumbnailFileInput.addEventListener("change", () => {
+      const file = thumbnailFileInput.files[0];
+      if (!file) {
+        showThumbnail(thumbnailUrlInput.value.trim());
+        return;
+      }
+
+      showThumbnail(URL.createObjectURL(file));
+    });
+
+    updateText();
+  </script>
+</body>
+</html>
