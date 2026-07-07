@@ -1,4 +1,4 @@
-# Frontend Development Journey 
+# Frontend Development 
 
 This repository contains my learning journey in Frontend Development.
 
@@ -23,7 +23,7 @@ Currently building a strong foundation in frontend development before moving tow
 ## Tech Stack
 - HTML5
 - CSS3
-- JavaScript (ES6+)
+- JavaScript
 
 ## Status
  Learning and improving every day.
