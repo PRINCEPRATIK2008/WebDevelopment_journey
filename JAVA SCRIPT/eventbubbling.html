@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+</head>
+<style>
+    .child {
+        background-color: aliceblue;
+        border: 2px solid black;
+        padding: 14px;
+        margin: 14px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .childcontainer {
+        background-color: beige;
+        padding: 14px;
+        margin: 14px;
+    }
+
+    .container {
+        background-color: rgb(71, 203, 203);
+        padding: 14px;
+        margin: 14px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <section class="childcontainer">
+            <div class="child">
+                I am a child
+            </div>
+        </section>
+    </div>
+    <script>
+        document.querySelector(".child").addEventListener("contextmenu", (e) => {
+            e.stopPropagation()
+            alert("Child was clicked")
+        })
+
+        document.querySelector(".childcontainer").addEventListener("contextmenu", (e) => {
+            e.stopPropagation()
+            alert("childcontainer was clicked")
+        })
+
+        document.querySelector(".container").addEventListener("contextmenu", (e) => {
+            alert("Container was clicked")
+        })
+
+        function getRandomcolor() {
+            let val1 = Math.ceil(Math.random() * 255);
+            let val2 = Math.ceil(Math.random() * 255);
+            let val3 = Math.ceil(Math.random() * 255);
+            return `rgb(${val1}, ${val2}, ${val3})`
+        }
+        // let a = setInterval(() => {
+        //     document.querySelector(".childcontainer").style.background = getRandomcolor();
+        // }, 200);
+        //  we can set setTimeout if we want to occur a action for only once or depending on the input
+        let a = setTimeout(() => {
+            document.querySelector(".childcontainer").style.background = getRandomcolor();
+        }, 1000);
+    </script>
+</body>
+
+</html>
