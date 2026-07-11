@@ -59,3 +59,30 @@ function ran(fun) {
     fun("Prince");
 }
 ran(greet)
+
+// example-4
+function add() {
+    console.log("Addition")
+}
+function multiply() {
+    console.log("Multiplication")
+}
+function calculater(operation) {
+    operation();
+}
+calculater(add);
+
+// example-5 
+function bye() {
+    console.log("Bye")
+}
+function execute(func){
+    console.log("start")
+    func();
+    console.log("end");
+}
+execute(bye)
+
+// example -6 
+
+
