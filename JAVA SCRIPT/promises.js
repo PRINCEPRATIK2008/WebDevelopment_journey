@@ -38,14 +38,6 @@ p3.then((a) => {
     console.log(err)
 })
 
-// p.allSettled() : reject ho ya resolve doesnt care it will provide value and status of the promise
-
-// p.race() : jonsi bhi promise phele resolve hui woh show hojaygi 
-// p.any() :    HMWRK
-// p.resolve() : HMWRK
-// p.reject() : HMWRK
-// quix : try all these api on your custom promises
-
 // For more practice
 let prom3 = new Promise((resolve, reject) => {
     console.log("Downloading.....")
